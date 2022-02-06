@@ -113,17 +113,18 @@ tweetList = ['this is a quote: he who shall not be named', 'who among us really'
 
 # This evaluates each tweet in TweetList for whether it contains the specified regex search, and whether that regex pattern in a tweet matches exactly to any other tweet in the list. If it does, it is assigned a value True. If it doesn't, it's assigned a value False.
 trueFalseList = []
-for tweet in tweetList:
+for tweet in content2:
   whoPhrase = re.search("who \w+ \w+", tweet)
   if whoPhrase is None:
       trueFalseList.append(False)
   else:
-      trueFalseList.append(any(whoPhrase.group(0) in t for t in tweetList))
+      trueFalseList.append(any(whoPhrase.group(0) in t for t in content2))
 print(trueFalseList)
+
 
 # The following takes our two lists, tweetList and trueFalseList, and zips them together. It then creates a dataframe out of this list, that can then be converted to a .csv file
 
-annotatedTweetList = list(zip(tweetList, trueFalseList))
+annotatedTweetList = list(zip(content2, trueFalseList))
 tweetDataframe = pandas.DataFrame(annotatedTweetList)
 tweetDataframe.to_csv('literary-annotated-tweets.csv', header=["Tweets", "isLiterary"], index=False)
 
