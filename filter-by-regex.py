@@ -44,9 +44,9 @@ print(content)
 # -- Second filter: -- Remove tweets where the last non-whitespace character before the word 'who' is not a letter or a comma. See Lecture 3 slides for more explanation of this!
 # -- Suggested approach: -- Use the list you created as a result of the previous filter. Save the 10 possible pronouns in a list. Create a loop to run through each entry in your list. Use a conditional statement to construct a regular expression match, and save the list elements matching your condition. Print the length of the list.
 
-pronouns = 'I, me, you, he, his, she, her, we, us, they, their'
+pronouns = ['it', 'you', 'he', 'his', 'she', 'her', 'we', 'us', 'they', 'them']
 pattern = "(\w|,) who"
-pattern2 = "(I|me|you|he|his|she|her|we|us|they|them|,) who"
+pattern2 = "(it|you|he|his|she|her|we|us|they|them|,) who"
 
 content2 = []
 
@@ -58,13 +58,13 @@ for tweet in content:
 # -- Third filter: -- Remove the pattern 'of PRO who'
 # -- Suggested approach: -- Create another loop, and another conditional statement using a regular expression from the list you got from the previous filter. This time, save only those that DO NOT match the conditional statement. Print the length of the list.
 
-pattern3 = "of (I|me|you|he|his|she|her|we|us|they|them|,) who"
+pattern3 = "of (it|you|he|his|she|her|we|us|they|them|,) who"
 
 for tweet in content2:
   if re.search(pattern3, tweet):
     content2.remove(tweet)
 
-
+print(len(content2))
 # -- Fourth filter: -- Remove tweets where the pronoun 'it' preceeds the word 'who' by 2-4 words
 # -- Suggested approach: -- Write a regular expression that picks out this pattern. Using the list you generated from the previous filter, use create a loop with a conditional statement that removes this pattern. Print the length of the list.
 
