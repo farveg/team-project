@@ -37,7 +37,7 @@ for col in file:
 # -- Suggested approach: -- using your list, convert the list into a dictionary, which will automatically remove duplicates. Then convert your dictionary back into a list. Print the length of the list. https://www.w3schools.com/python/python_howto_remove_duplicates.asp
 
 content = list(dict.fromkeys(content))
-print(content)
+print(len(content))
 
 
 
@@ -124,7 +124,23 @@ print(trueFalseList)
 
 # The following takes our two lists, tweetList and trueFalseList, and zips them together. It then creates a dataframe out of this list, that can then be converted to a .csv file
 
+list1 = []
+count=0
+
+for x in content2:
+  if count <150:
+    list1.append(x)
+    count+=1
+
 annotatedTweetList = list(zip(content2, trueFalseList))
 tweetDataframe = pandas.DataFrame(annotatedTweetList)
-tweetDataframe.to_csv('literary-annotated-tweets.csv', header=["Tweets", "isLiterary"], index=False)
+tweetDataframe.to_csv('literary-annotated-tweets.csv', header=["Tweet-text", "Uniqueness"], index=False)
+
+with open('manual-tweets.csv', 'w') as z:
+  write = csv.writer(z)
+  write.writerow(['Tweets', 'RC-type', 'RC-head', 'Role'])
+
+  for x in list1:
+    write.writerow([x])
+
 
