@@ -44,8 +44,6 @@ print(content)
 # -- Second filter: -- Remove tweets where the last non-whitespace character before the word 'who' is not a letter or a comma. See Lecture 3 slides for more explanation of this!
 # -- Suggested approach: -- Use the list you created as a result of the previous filter. Save the 10 possible pronouns in a list. Create a loop to run through each entry in your list. Use a conditional statement to construct a regular expression match, and save the list elements matching your condition. Print the length of the list.
 
-tweets = ["Excited for all of you who don't think the Nintendo Direct will be 10 minutes of Dread, a repeat of that with a voiceover, and then the same with Pokemon Diamond/Pearl.", "✨ Stolen Kiss KR1SHIEIJI would kiss you around the corner... 😏 And you, who would do it? ➡️ https://t.co/FRXFT3os5H https://t.co/l2YzeGFk08", "unlike you, who have to go through 'Marriage' to acquire his last name, i will obtain his last name by slaying him on the top of a mountain and taking it for my own", "This is just dumb nonsense", "I'm trying to trick this machine"]
-
 pronouns = 'I, me, you, he, his, she, her, we, us, they, their'
 pattern = "(\w|,) who"
 pattern2 = "(I|me|you|he|his|she|her|we|us|they|them|,) who"
@@ -56,7 +54,6 @@ for tweet in content:
   if re.search(pattern2, tweet):
     content2.append(tweet)
 
-print(len(content2))
 
 # -- Third filter: -- Remove the pattern 'of PRO who'
 # -- Suggested approach: -- Create another loop, and another conditional statement using a regular expression from the list you got from the previous filter. This time, save only those that DO NOT match the conditional statement. Print the length of the list.
@@ -67,7 +64,6 @@ for tweet in content2:
   if re.search(pattern3, tweet):
     content2.remove(tweet)
 
-print(len(content2))
 
 # -- Fourth filter: -- Remove tweets where the pronoun 'it' preceeds the word 'who' by 2-4 words
 # -- Suggested approach: -- Write a regular expression that picks out this pattern. Using the list you generated from the previous filter, use create a loop with a conditional statement that removes this pattern. Print the length of the list.
@@ -77,8 +73,6 @@ pattern4 = "( it.\w.who| it.\w.\w.who| it.\w.\w.\w.who)"
 for tweet in content2:
   if re.search(pattern4, tweet):
     content2.remove(tweet)
-
-print(len(content2))
 
 
 # -- Fifth filter: -- Remove tweets where 'PRO who' is preceded by the verbs 'ask', 'tell', 'wonder', 'inform', and 'show'.
@@ -94,12 +88,10 @@ for tweet in content2:
   if re.search(pattern5, tweet):
     content2.remove(tweet)
 
-print(len(content2))
+
 
 # output your list as a .csv or .tsv file.
 
-row = ['Content']
-rows = []
 
 
 with open('new_file.csv', 'w') as f:
