@@ -1,6 +1,6 @@
 # Initiated by Kelsey Kraus
 #
-# Contributors: Jack McGreevy 
+# Contributors: Jack McGreevy
 #
 # Description: <UPDATE ME!> This file currently contains the instructions for replicating the data cleaning method implemented by CTK 2016.
 
@@ -131,6 +131,7 @@ for x in content2:
   if count <150:
     list1.append(x)
     count+=1
+
 
 annotatedTweetList = list(zip(content2, trueFalseList))
 tweetDataframe = pandas.DataFrame(annotatedTweetList)
