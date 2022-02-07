@@ -9,6 +9,7 @@ This folder currently contains 7 files:
  5. **new_file.csv**, a .csv file containing the set of filtered tweets.
  6. **literary-annotated-tweets.csv**, a .csv file containing the set of filtered tweets along with their Uniqueness value (literary or non-literary).
  7. **manual-tweets.csv**, a .csv file containing 150 tweets with annotation columns describing the pronominal head, type of relative clause, and syntactic role.
+ 8. **CTK Replication-Group 7 Findings.pdf**, A pdf file detailing findings of tweet filters and annotations, and how these findings compare to CTK data.
 
 ### Overview of data in _pro-who-tweets.csv_
 
