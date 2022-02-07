@@ -1,5 +1,4 @@
 # Initiated by Kelsey Kraus
-#
 
 # Contributors: Jack McGreevy 
 #
@@ -132,6 +131,7 @@ for x in content2:
   if count <150:
     list1.append(x)
     count+=1
+
 
 annotatedTweetList = list(zip(content2, trueFalseList))
 tweetDataframe = pandas.DataFrame(annotatedTweetList)
