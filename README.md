@@ -1,6 +1,6 @@
 # CTK Replication
 
-This folder currently contains 7 files:
+This folder contains 7 files:
 
  1. this **README** file
  2. **scrapeTweets.py**, a script that was used to scrape data from Twitter of the pattern _PRONOUN who_ from tweets posted on 22 September, 2021. 
@@ -36,5 +36,5 @@ Each line in this file is a comma-separated list (csv) of the following informat
   - **url**: the address where this tweet can be publically viewed
 
 
-Team members: Jason Kushner, Jack McGreevy, Samantha Loya Garcia, Mehr Showkat
+Collaborators: Jason Kushner, Jack McGreevy, Samantha Loya Garcia, Mehr Showkat
 =======
